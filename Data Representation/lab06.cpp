@@ -1,5 +1,3 @@
-// Serena Reese - CS 3304 - Lab 06
-
 #include <string>
 
 using namespace std;
