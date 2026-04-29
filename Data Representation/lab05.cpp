@@ -1,5 +1,3 @@
-// Serena Reese - CS 3304 - Lab 05
-
 #include <iostream>
 #include <iomanip>
 #include <climits>
