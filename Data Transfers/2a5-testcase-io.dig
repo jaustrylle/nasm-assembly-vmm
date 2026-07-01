@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>2</version>
+  <attributes>
+    <entry>
+      <string>view0</string>
+      <transform>
+        <matrix>
+          <double>1.0364718987341777</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>1.0364718987341777</double>
+          <double>-285.0247721669476</double>
+          <double>123.86262517016777</double>
+        </matrix>
+      </transform>
+    </entry>
+  </attributes>
+  <visualElements>
+    <visualElement>
+      <elementName>Testcase</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Basic</string>
+        </entry>
+        <entry>
+          <string>Testdata</string>
+          <testData>
+            <dataString>I3 I2 I1 I0 X
+0  0  0  0  0</dataString>
+          </testData>
+        </entry>
+      </elementAttributes>
+      <pos x="280" y="300"/>
+    </visualElement>
+  </visualElements>
+  <wires/>
+  <measurementOrdering/>
+</circuit>
