@@ -1,0 +1,56 @@
+Lab 06 is a pushdown automata that accepts the set that consists of:
+1. w | w elem {a,b,c}*
+2. all the a's come before the b's
+3. same number of a's as b's
+4. arbitrarily many c's can be in front, behind, or among a's and b's
+
+Valid strings:
+elem
+ab
+abc
+acb
+cab
+aabb
+abcc
+acbc
+cabc
+cacb
+ccab
+aaabbb
+aabbcc
+aabcbc
+aabccb
+aaccbb
+accabb
+caabcb
+ccaabb
+aaaabbbb
+aaaaabbbbb
+ccccaabcccbccbc
+
+Invalid strings:
+ac
+ba
+bc
+ca
+cb
+aabc
+abbc
+bbcc
+aaabb
+abbbc
+aabbbc
+abbbcc
+bbbccc
+aaabbbbc
+aabbbbcc
+abbbbccc
+bbbbcccc
+aaaabbbbbc
+aaabbbbbcc
+aabbbbbccc
+abbbbbcccc
+bbbbbccccc
+
+Considerations:
+The main function appends the character '%' to each line as its read in, and the halt state is 0. The start state is 1, and for each input string that is tested, the stack is initialized to '@'.
