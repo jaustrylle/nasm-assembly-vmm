@@ -1,0 +1,1 @@
+Lab 32 implements a finite state machine for the language of sigma = {a,b}. All strings that have an odd number of a's and an even number of b's are accepted.
