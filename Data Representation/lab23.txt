@@ -1,0 +1,1 @@
+Lab 23 is a procedure that generates a random string of a given length that contains all capital letters. 
