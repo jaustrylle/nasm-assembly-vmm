@@ -1,0 +1,7 @@
+Lab 37 uses Euclid's algorithm to determine the greatest common divisor.
+
+If u and v are integers, both non-zero, their greatest common divisor - gcd(u,v) - is the largest non-negative integer that evenly divides both u and v.
+
+When u and v are both zero instead, every integer evenly divides zero, so we set gcd(0,0) = 0.
+
+When either u or v is zero, gcd(u,0) = |u| and gcd(0,v) = |v|.
