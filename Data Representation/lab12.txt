@@ -1,0 +1,34 @@
+Lab 12 is a boolean assembly function accepting a string of unknown length as its argument. It determines if the string is a member of the set where {x | x elem {a,b}* containing an odd number of occurrences of substring 'aa'}.
+
+Valid strings:
+aab
+baa
+aabbb
+bbbaa
+aabbbbb
+bbbbbbbaa
+aa
+baa
+bbaaaabaaa
+bababaabababa
+
+Invalid strings:
+elem
+babab
+abbba
+bbbabbbabbb
+a
+b
+ab
+ba
+bb
+aaa
+aba
+bbb
+abba
+baba
+babba
+abbbba
+bbabababa
+babaaabaaa
+abaaaaaaaaaa
