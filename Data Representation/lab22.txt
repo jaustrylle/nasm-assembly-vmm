@@ -1,0 +1,5 @@
+The Fibonacci numbers, commonly denoted F sub n, form the Fibonacci sequence where each number is the sum of the two preceding numbers. The sequence starts from two initial values. This assembly language program contains three functions.
+
+Function 1: Accepts two 32-bit signed integers from standard input representing the first two terms in a Fibonacci sequence
+Function 2: Determines the succeeding terms in the Fibonacci sequence
+Function 3: Displays the terms in the sequence to standard output
