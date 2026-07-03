@@ -1,0 +1,1 @@
+Lab 27 is an Assembly function that receives a signed 32-bit integer and displays its internal quaternary representation. It uses the bt instuction to access the bits and does not use any shift or division instruction. 
