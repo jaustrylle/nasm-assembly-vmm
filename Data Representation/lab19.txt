@@ -1,0 +1,1 @@
+Lab 19 reverses the elements of the integer array in place, but the elements of the array are not copied. The loop instruction initializes the elements of the integer array from standard input, and the second loop instruction reverses the elements of the array in place. The hexadecimal contents of an area of memory are displayed three times.
