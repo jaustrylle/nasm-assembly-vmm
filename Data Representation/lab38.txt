@@ -1,0 +1,7 @@
+Lab 38 consists of three assembly functions.
+
+Function 1 writes the binary (base 2) representation of a signed 32-bit integer to standard out.
+Function 2 writes the octal (base 8) representation of a signed 32-bit integer to standard out.
+Function 3 writes the hexadecimal (base 16) representation of a signed 32-bit integer to standard out.
+
+Each function is written recursively, and no global variables are used in any of the functions. Each function contains only a single text section. The system stack is used for any local variables.
