@@ -1,0 +1,5 @@
+Three doublewords are reserved in the bss section to represent variables val1, val2, and val3. Values for the variables are accepted through standard input.
+
+The eax register computes -val1 - val2 - val3. The contents of the registers are shown after each step in the calculation, and the program adheres to ordinary rules of algebraic precedence and associativity. After the calculation is completed, the contents of the three variables are shown.
+
+To use the Makefile, add a target of lab14 to targetsAsmLanguage.
