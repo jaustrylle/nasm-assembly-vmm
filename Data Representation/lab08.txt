@@ -1,0 +1,27 @@
+Lab 8 is a pushdown transducer that accepts the set consisting of:
+
+{a^i * b^i, c^k | i, j > 0 and k = min(i,j)}.
+
+Valid strings:
+ab,c;
+aab,c;
+abb,c;
+aaab,c;
+aabb,cc;
+abbb,c;
+aaaab,c;
+aaabb,cc;
+aabbb,cc;
+
+Invalid strings:
+elem,elem;
+a,elem;
+b,elem;
+aa,elem;
+ba,elem;
+bb,elem;
+aba,c;
+baa,elem;
+bab,elem;
+bba,elem;
+bbb,elem;
