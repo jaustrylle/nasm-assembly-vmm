@@ -1,0 +1,9 @@
+Lab 10 is a Turing machine for the following:
+
+sigma = {a,b,0,1,=,_}
+
+{(x =, x = ans) | x elem {a,b}*, and ans = {1 if x has twice as many a's as b's, else 0}.
+
+Other considerations:
+1. As each input line is read in, the main function creates the initial tape contents with 10 blanks followed by the original input line followed by more blanks.
+2. That halt state is 0, and the start state is 1.
