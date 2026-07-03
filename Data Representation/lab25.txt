@@ -1,0 +1,1 @@
+Lab 25 is an Assembly language program that will read a header H before reading H additional signed 32-bit integers. It determines if each integer is divisible by 4 without using any shift or division instruction. It also displays the integer to standard output along with a descriptive literal message. 
