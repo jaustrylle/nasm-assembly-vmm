@@ -1,0 +1,1 @@
+Lab 26 is an Assembly function that receives a signed 32-bit integer and displays its internal binary representation using the bt instruction to access the bits. It doesn't use any shift or division instruction.
