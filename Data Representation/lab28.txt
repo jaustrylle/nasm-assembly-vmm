@@ -1,0 +1,1 @@
+Lab 28 is an Assembly function that receives a signed 32-bit integer and displays its internal octal representation. It uses the bt instruction to access the bits and does not use any shift or division instruction.
