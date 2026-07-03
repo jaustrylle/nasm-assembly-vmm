@@ -1,0 +1,41 @@
+Lab 7 is a pushdown automata that accepts the set that consists of:
+
+{ w | w elem {a,b}* when w has twice as many a's as b's}
+
+while...
+
+sigma = {a,b} & gamma = {a,b,@}.
+
+Valid strings:
+elem
+aab
+aba
+aaaabb
+baaaab
+baabaa
+bbbaaaaaa
+bbaaaaaab
+baaabaaab
+aaaaaabbb
+aaaaabbab
+
+Invalid strings:
+a
+b
+aa
+ab
+ba
+bb
+abab
+baaaa
+bbba
+aabb
+aaabbbb
+aaaabbbb
+aaaabbbbbb
+babb
+
+Considerations:
+1. The main function appends the character '%' to each line as its read in.
+2. The halt state is 0, and the start state is 1.
+3. The stack is initialized to '@' for each input string tested.
