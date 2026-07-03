@@ -1,0 +1,1 @@
+Lab 34 is a procedure multiplying two unsigned 32-bit integers using only shifting and addition. The product is returned in the eax register, but it could be as large as 64 bits. This lab however assumes that the product is never larger than 32 bits. 
