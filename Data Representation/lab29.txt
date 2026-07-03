@@ -1,0 +1,6 @@
+A prime number is an integer greater than 1 with positive divisors only being 1 and the integer itself. Eratosthenes's algorithm, the Sieve of Eratosthenes, found all prime numbers less than or equal to a given number n (all primes in the range 2-n). This procedure is repeated in Lab 29 until the first number in the list that's not crossed out is met as long as the square is greater than n. All numbers that remain in the list are primes from 2-n. 
+
+There are three functions:
+1. Fill in an array of bytes
+2. Cross out multiples
+3. Display remaining primes
