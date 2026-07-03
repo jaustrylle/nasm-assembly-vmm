@@ -1,0 +1,68 @@
+Stage 1's structured reference database of expected behavior:
+
+### 1. Lexical and Grammar Constraints
+
+To parse the new Stage 1 syntax properly, the scanner and parser must enforce these specific rules:
+
+* **New Keywords:** The lexicon now includes `mod`, `div`, `and`, `or`, `read`, and `write`.
+
+* **New Tokens:** The language adds `:=`, `*`, `(`, `)`, `=`, `<>`, `<`, `<=`, `>`, and `>=`.
+
+* **Scanner Adjustments:** When the scanner encounters `:` it must explicitly check if the next character is `=` to form the assignment operator. The same continuation check applies when encountering `<` or `>`.
+
+
+### 2. Operator Precedence & Type Checking
+
+Pascallite has some unusual precedence rules that differ from standard languages, so they must be enforced perfectly to match the expected AST and stack states.
+
+* **Unusual Precedence:** The logical operator `and` has the same precedence level as `*`, `div`, and `mod`. The operator `or` shares precedence with the binary `+` and `-` operators.
+
+* **Integer Operands:** The operators `div`, `mod`, binary `+`, binary `-`, unary `+`, unary `-`, `<`, `>`, `<=`, and `>=` require integer-valued expressions as operands.
+
+* **Boolean Operands:** The logical operators `and`, `or`, and `not` require boolean-valued operands.
+
+* **Equality/Inequality:** The `=` and `<>` operators allow either two integer operands or two boolean operands, but the types cannot be mixed.
+
+* **Assignment Rules:** For an assignment statement, the left-hand side must be a declared variable and its type must exactly match the evaluated expression on the right-hand side.
+
+
+### 3. Temporary Variable Management (`T0`, `T1`, etc.)
+
+The diffs will fail instantly if the temporary variable numbering gets out of sync.
+
+* **Allocation:** Temporaries are requested sequentially as `T0`, `T1`, etc., using a tracker initialized at -1.
+
+* **Storage Uniformity:** Because both integer and boolean values occupy a full word, only one type of temporary storage needs to be allocated.
+
+* **Symbol Table Updates:** When a temporary is reused, its data type in the symbol table must be dynamically updated to reflect its new contents (integer or boolean).
+
+* **De-allocation:** The `freeTemp()` function only releases the *name* for reuse; once memory storage is allocated for a temporary, it remains allocated in the `.bss` section.
+
+
+### 4. Emit Function Assembly Logic
+
+The emitted instructions and register states must flow exactly as outlined.
+
+* **Addition (`emitAdditionCode`):** * Load `operand2` into the `A` register (eax) if it is not already there.
+* Emit the register-memory addition instruction.
+* Deassign involved temporaries, assign the `A` register the next available temporary name, and push that result name onto the operand stack.
+
+* **Division (`emitDivisionCode`):** * Load `operand2` into the `A` register, then emit code to extend the sign of the dividend from `eax` to `edx:eax`.
+* Emit the register-memory division instruction.
+
+* **Logical AND (`emitAndCode`):**
+* Load `operand2` into the `A` register, then emit the register-memory `and` instruction.
+* Change the new temporary's symbol table entry type to boolean.
+
+* **Equality (`emitEqualityCode`):**
+* After loading `operand2` and executing a register-memory compare, emit a jump-if-equal instruction to a new label (`Ln`).
+* Emit code to load `FALSE` (value 0) into the `A` register, followed by an unconditional jump to the next label (`Ln+1`).
+* Emit the `Ln` label, load `TRUE` (value -1) into the `A` register, and then emit the `Ln+1` label.
+
+* **Assignment (`emitAssignCode`):**
+* Load `operand1` into the `A` register, then emit code to store the contents into the memory location pointed to by `operand2`.
+* Crucially, update `contentsOfAReg` to equal `operand2`.
+
+* **Read / Write (`emitReadCode` / `emitWriteCode`):**
+* `Read` calls the Irvine `ReadInt` function and stores the `A` register contents at the operand's name.
+* `Write` loads the operand into the `A` register, calls Irvine `WriteInt`, and immediately calls Irvine `Crlf`.
